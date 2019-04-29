@@ -1,0 +1,96 @@
+{layout="_layout/default"}
+	<div role="main" class="main">
+
+		<section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7" style="background-image: url(/assets/img/page-header/page-header-about-us.jpg);">
+			<div class="container">
+				<div class="row mt-5">
+					<div class="col-md-12 align-self-center p-static order-2 text-center">
+						<h1 class="text-9 font-weight-bold">Contact Us</h1>
+					</div>
+					<div class="col-md-12 align-self-center order-1">
+						<ul class="breadcrumb breadcrumb-light d-block text-center">
+							<li><a href="{site_url}">Home</a></li>
+							<li class="active">Contact Us</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="container">
+			<div class="row py-4">
+				<div class="col-lg-7 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="650">
+					{exp:channel:form channel="contact_form" dynamic_title="[full_name]" return="contact-us" unique_url_title="yes" id="contact"}
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label class="required font-weight-bold text-dark">Full Name</label>
+								<input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="full_name" id="name" required>
+							</div>
+							<div class="form-group col-md-6">
+								<label class="required font-weight-bold text-dark">Email Address</label>
+								<input type="email_address" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email_address" id="email" required>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-12">
+								<label class="font-weight-bold text-dark">Subject</label>
+								<input type="text" value="" data-msg-required="Please enter the subject" maxlength="100" class="form-control" name="about" id="subject" required>
+
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-12 mb-4">
+								<label class="required font-weight-bold text-dark">Message</label>
+								<textarea maxlength="5000" data-msg-required="Please enter your message." rows="6" class="form-control" name="message" id="message" required></textarea>
+							</div>
+						</div>
+						{if captcha}
+						<div class="form-row">
+							<div class="form-group col-md-12 mb-0">
+								<label class="required font-weight-bold text-dark" for="captcha">Please enter the word you see in the image below:</label>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-4">
+								{captcha}
+							</div>
+							<div class="form-group col-md-8">
+								<input type="text" value="{captcha_word}" maxlength="20" data-msg-captcha="Wrong verification code." data-msg-required="Please enter the verification code." placeholder="Type the verification code." class="form-control form-control-lg captcha-input" name="captcha" id="captcha" required>
+							</div>
+						</div>
+						{/if}
+						<div class="form-row">
+							<div class="form-group col-md-12">
+								<hr>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-12 mb-5">
+								<input type="submit" id="contactFormSubmit" value="Send Message" class="btn btn-primary btn-modern pull-right" data-loading-text="Loading...">
+							</div>
+						</div>
+                    {/exp:channel:form}
+				</div>
+				<div class="col-lg-5">
+
+					<div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800">
+						<h4 class="text-primary">Our <strong>Office</strong></h4>
+						<ul class="list list-icons list-icons-style-3 mt-2">
+							<li><i class="fas fa-map-marker-alt top-6"></i> <strong>Address:</strong> 2/339, Vishwas Khand, Gomti Nagar, Lucknow (India)</li>
+							<li><i class="fas fa-phone top-6"></i> <strong>Phone:</strong>+91(522)-4081932</li>
+							<li><i class="fas fa-envelope top-6"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">info@360adaptive.com</a></li>
+						</ul>
+
+						<h4 class="text-primary pt-5">Business <strong>Hours</strong></h4>
+						<ul class="list list-icons list-dark mt-2">
+							<li><i class="far fa-clock top-6"></i> Monday - Saturday - 10am to 6:30pm</li>
+							<li><i class="far fa-clock top-6"></i> Sunday - Closed</li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+
+	</div>
+
+				

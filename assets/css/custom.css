@@ -1,0 +1,8 @@
+/* Add here all your CSS customizations */
+.form-group #contactFormSubmit {
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+}
+#header .header-logo img{
+	min-height: 65px;
+}

@@ -1,0 +1,81 @@
+{layout="_layout/default"}
+<div role="main" class="main">
+	<section class="page-header page-header-modern page-header-background     page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7" style="background-image: url(/assets/img/page-header/page-header-about-us.jpg);">
+		<div class="container">
+			<div class="row mt-5">
+				<div class="col-md-12 align-self-center p-static order-2 text-center">
+					<h1 class="text-9 font-weight-bold">Blog</h1>
+				</div>
+				<div class="col-md-12 align-self-center order-1">
+					<ul class="breadcrumb breadcrumb-light d-block text-center">
+						<li><a href="{site_url}">Home</a></li>
+						<li class="active">Blog</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+		<div class="container py-4">
+			<div class="row">
+				<div class="col-lg-3 order-lg-2">
+					<aside class="sidebar">
+						<h5 class="font-weight-bold pt-4">Categories</h5>
+						<ul class="nav nav-list flex-column mb-5">
+							{exp:channel:categories show_empty="no"}
+							<li class="nav-item"><a class="nav-link" href="{path='blog/category'}">{category_name}</a></li>
+							{/exp:channel:categories}
+						</ul>
+					</aside>
+				</div>
+				<div class="col-lg-9 order-lg-1">
+					<div class="blog-posts">
+                        {exp:channel:entries channel="blog" limit="12" orderby="date" paginate="bottom"}
+						<article class="post post-medium">
+							<div class="row mb-3">
+								<div class="col-lg-10">
+									<div class="post-content">
+										<h2 class="font-weight-semibold text-5 line-height-4 mb-2"><a href="{page_url}">{title}</a></h2>
+										<p class="mb-0">{exp:streeng allowed="none" words="30" append="..."}{rich_text}{/exp:streeng}</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col">
+									<div class="post-meta">
+										<span><i class="far fa-user"></i> By {author} </span>
+										
+										{if has_categories}
+										<span><i class="far fa-folder">{categories backspace="2"}</i> <a href="{path='blog/category'}">{category_name}</a>, {/categories}</span>
+										{/if}
+										<span class="d-block d-sm-inline-block float-sm-right mt-3 mt-sm-0"><a href="{page_url}" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
+									</div>
+								</div>
+							</div>
+						</article>
+					
+						{paginate}
+						<div class="row">
+							<div class="col">
+								{pagination_links}
+								<ul class="pagination float-right">
+									{previous_page}
+									<li class="page-item"><a class="page-link" href="{pagination_url}"><i class="fas fa-angle-left"></i></a></li>
+									{/previous_page}
+									{page}
+									<li class="page-item {if current_page}active{/if}"><a class="page-link" href="{pagination_url}">{pagination_page_number}</a></li>
+									{/page}
+									{next_page}
+									<a class="page-link" href="{pagination_url}"><i class="fas fa-angle-right"></i></a>
+									{/next_page}
+								</ul>
+								{/pagination_links}
+							</div>
+						</div>
+						{/paginate}
+						{/exp:channel:entries}
+
+					</div>
+				</div>
+			</div>
+	    </div>
+	</div>

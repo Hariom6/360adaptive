@@ -1,0 +1,44 @@
+{layout="_layout/default"}
+<div role="main" class="main">
+	<section class="page-header page-header-modern bg-color-dark page-header-md">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 order-2 order-md-1 align-self-center p-static">
+					{exp:channel:entries channel="blog"}
+					<h1 class="">{title}</strong></h1>
+					{/exp:channel:entries}
+				</div>
+			</div>
+		</div>
+	</section>
+	
+    <div class="container py-4">
+		<div class="row">
+			<div class="col-lg-3 order-lg-2">
+				<aside class="sidebar">
+					<h5 class="font-weight-bold pt-4">Categories</h5>
+						<ul class="nav nav-list flex-column mb-5">
+							{exp:channel:categories show_empty="no"}
+							<li class="nav-item"><a class="nav-link" href="{path='blog/category'}">{category_name}</a></li>
+							{/exp:channel:categories}
+						</ul>
+				</aside>
+			</div>
+			<div class="col-lg-9 order-lg-1">
+				<div class="blog-posts">
+					{exp:channel:entries channel="blog"}
+					<article class="post post-medium">
+						<div class="row mb-3">
+							<div class="col-lg-10">
+								<div class="post-content">
+									<!-- <h2 class="font-weight-semibold text-5 line-height-4 mb-2">{title}</h2> -->
+									<p class="mb-0">{rich_text}</p>
+								</div>
+							</div>
+						</div>
+					</article>	
+					{/exp:channel:entries}
+				</div>
+			</div>
+		</div>
+	</div>				
